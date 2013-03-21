@@ -998,6 +998,7 @@ static int set_reg_pair (
                         dev_err (&client->dev, "could not write byte to register %x\n", reg);
                         return status;
                 }
+                break;
         case 2:
                 status = i2c_smbus_write_byte_data (client, reg + 1, value.value_b);
 
@@ -1006,6 +1007,7 @@ static int set_reg_pair (
                         dev_err (&client->dev, "could not write byte to register %x\n", reg + 1);
                         return status;
                 }
+                break;
         default:
         case 3:
                 status = i2c_smbus_write_word_data (client, reg, value.value);
