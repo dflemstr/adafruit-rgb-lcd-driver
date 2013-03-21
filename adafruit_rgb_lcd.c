@@ -28,7 +28,7 @@ static int device_next_minor;
 
 static struct i2c_device_id driver_idtable[] = {
         { DRIVERNAME, 0 },
-        { }
+        { {0}, 0 }
 };
 
 static struct i2c_driver driver = {
