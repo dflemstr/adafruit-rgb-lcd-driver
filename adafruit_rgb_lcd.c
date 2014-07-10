@@ -97,7 +97,7 @@ static void __exit mod_exit (void)
         i2c_del_driver (&driver);
 }
 
-static int __devinit driver_probe (struct i2c_client *client, const struct i2c_device_id *id)
+static int driver_probe (struct i2c_client *client, const struct i2c_device_id *id)
 {
         int status;
         device_data *data;
@@ -275,7 +275,7 @@ error:
         return status;
 }
 
-static int __devexit driver_remove (struct i2c_client *client)
+static int driver_remove (struct i2c_client *client)
 {
         int status;
         int err = 0;
